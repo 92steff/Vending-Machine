@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vending Machine</title>
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+            integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+            crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="custom.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-fluid">
+        
+        <div class="row"> 
+            
+            <div class="col-4">
+                
+                <div class="content-wrapper">
+                     
+                    <div class="btn info-box" data-toggle="collapse" data-target="#prices" style="float:left" onclick="spin()">
+                        <i id="spinner" class="fa fa-spinner closed" aria-hidden="true"></i>
+                        Prices
+                    </div>
+
+                    <div class="col collapse" id="prices">
+
+                        <div class="wrapper">
+                            <span>#1</span>
+                            <img class="img_mini" src="pics/38568_fl.png" alt="oreo_cookie">
+                            <span style="float:right">= $10</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#2</span>
+                            <img class="img_mini" src="pics/aqua-viva.png" alt="aqua_viva_water">
+                            <span style="float:right">= $2</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#3</span>
+                            <img class="img_mini" src="pics/Milka-Whole-Nut_88.png" alt="milka_chocolate">
+                            <span style="float:right">= $8</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#4</span>
+                            <img class="img_mini" src="pics/dvopek-maretti-pecurke-i-krem-70g-500x500.png" alt="bruschette_maretti">
+                            <span style="float:right">= $4</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#5</span>
+                            <img class="img_mini" src="pics/2a5991b2a5706b2dfb2a66eb93259bea_water-bottle-png-image-bottled-water-clipart-png_481-1816.png" alt="evian_water">
+                            <span style="float:right">= $7</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#6</span>
+                            <img class="img_mini" src="pics/HERO_puresqueezedoj_some_pulp_59oz_bottle.png" alt="orange_juice">
+                            <span style="float:right">= $5</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#7</span>
+                            <img class="img_mini" src="pics/guarana.png" alt="guarana">
+                            <span style="float:right">= $4</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#8</span>
+                            <img class="img_mini" src="pics/Mini%20marie%20big.png" alt="mini_marie_cookie">
+                            <span style="float:right">= $3</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#9</span>
+                            <img class="img_mini" src="pics/PNGPIX-COM-Lays-Chips-Pack-PNG-Transparent-Image-500x697.png" alt="lays_chips">
+                            <span style="float:right">= $6</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#10</span>
+                            <img class="img_mini" src="pics/index_jaffacake.png" alt="jaffa_cakes">
+                            <span style="float:right">= $4</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#11</span>
+                            <img class="img_mini" src="pics/Smoki-250g-Party-Pack.png" alt="smoki_flips">
+                            <span style="float:right">= $6</span>
+                        </div>
+
+                        <div class="wrapper">
+                            <span>#12</span>
+                            <img class="img_mini" src="pics/snickers_PNG13926.png" alt="snickers">
+                            <span style="float:right">= $5</span>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="col-4">
+                
+                <div class="content-wrapper">
+                
+                        <div class="row" style="height:100vh">
+
+                            <div class="col-4 align-self-center machine text-center">
+
+                                <div class="row" style="height:100%">
+
+                                    <div class="col-9">
+
+                                        <div class="row">
+
+                                            <h3 class="col text-center">
+                                                Vending Machine
+                                            </h3>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col item">
+                                                <img id="product1" src="pics/38568_fl.png" alt="oreo_cookie">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product2" src="pics/aqua-viva.png" alt="aqua_viva_water">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product3" src="pics/Milka-Whole-Nut_88.png" alt="milka_chocolate">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col item">
+                                                <img id="product4" src="pics/dvopek-maretti-pecurke-i-krem-70g-500x500.png" alt="bruschette_maretti">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product5" src="pics/2a5991b2a5706b2dfb2a66eb93259bea_water-bottle-png-image-bottled-water-clipart-png_481-1816.png" alt="evian_water">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product6" src="pics/HERO_puresqueezedoj_some_pulp_59oz_bottle.png" alt="orange_juice">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col item">
+                                                <img id="product7" src="pics/guarana.png" alt="guarana">        
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product8" src="pics/Mini%20marie%20big.png" alt="mini_marie_cookie">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product9" src="pics/PNGPIX-COM-Lays-Chips-Pack-PNG-Transparent-Image-500x697.png" alt="lays_chips">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col item">
+                                                <img id="product10" src="pics/index_jaffacake.png" alt="jaffa_cakes">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product11" src="pics/Smoki-250g-Party-Pack.png" alt="smoki_flips">
+                                            </div>
+
+                                            <div class="col item">
+                                                <img id="product12" src="pics/snickers_PNG13926.png" alt="snickers">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row justify-content-center">
+
+                                            <div class="col-4 item coin-exchange" id="boughtItem">
+
+                                            </div>
+
+                                        </div>
+
+                                    </div> 
+
+
+                                    <div class="col-3" style="height:100%; padding:0; border-radius:10px">
+
+
+                                        <div id='coins-inserted'>$ 0</div>
+
+                                        <div class="col" id="screenWrap">
+
+                                            <div id="screen">INSERT COINS</div>
+
+                                        </div>
+
+
+                                        <div class="col board">
+
+                                            <div class="row">
+                                                <div class="col order-button" onclick="enterNumber(7)">7</div>
+                                                <div class="col order-button" onclick="enterNumber(8)">8</div>
+                                                <div class="col order-button" onclick="enterNumber(9)">9</div> 
+                                            </div>
+                                            <div class="row">
+                                                <div class="col order-button" onclick="enterNumber(4)">4</div>
+                                                <div class="col order-button" onclick="enterNumber(5)">5</div>
+                                                <div class="col order-button" onclick="enterNumber(6)">6</div> 
+                                            </div>
+                                            <div class="row">
+                                                <div class="col order-button" onclick="enterNumber(1)">1</div>
+                                                <div class="col order-button" onclick="enterNumber(2)">2</div>
+                                                <div class="col order-button" onclick="enterNumber(3)">3</div> 
+                                            </div>
+                                            <div class="row">
+                                                <div class="col order-button" onclick="deleteLastNum()">C</div>
+                                                <div class="col order-button" onclick="enterNumber(0)">0</div> 
+                                                <div class="col order-button" onclick="enter()" style="position:relative">
+                                                    <div id="enter">Enter</div>
+                                                </div> 
+                                            </div>
+
+                                        </div>
+
+                                        <div class="coin-exchange" id="coin-input">
+
+                                        </div>
+
+                                        <div class="coin-exchange" id="coin-change">
+
+                                        </div>
+
+                                        <div id="change" onclick="withdraw()">WITHDRAW</div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="right-side"></div>
+                                <div class="top-side"></div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+            
+                </div>     
+            
+            <div class="col-4">
+                
+                <div class="content-wrapper">
+
+                    <div class="info-box text-center">
+                        <span id="myWallet">$ 100</span>
+                    </div>
+
+                    <div class="coin-wrap">
+                        <div class="coin-worth">$10</div>
+                        <img class="coin" src="pics/diamond-coin.png">
+                    </div>
+
+                    <div class="coin-wrap">
+                        <div class="coin-worth">$5</div>
+                        <img class="coin" src="pics/golden-coin.png">
+                    </div>
+
+                    <div class="coin-wrap">
+                        <div class="coin-worth">$2</div>
+                        <img class="coin" src="pics/silver-coin.png">
+                    </div>
+
+                    <div class="coin-wrap">
+                        <div class="coin-worth">$1</div>
+                        <img class="coin" src="pics/bronze-coin.png">
+                    </div>
+
+                </div>
+                
+            </div>    
+                    
+        </div>
+        
+    </div>
+    
+    <script type="text/javascript" src="custom.js"></script>
+    
+</body>
+</html>
